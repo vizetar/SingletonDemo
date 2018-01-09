@@ -1,7 +1,7 @@
 # SingletonDemo
 This is about one of the Creational Design pattern which is Singleton - Basic Architecture.
 
-Creational design pattern deals with objects creation mechanism, it expalins creation of object in the manner which is suitable to a given situation.
+Creational design pattern deals with objects creation mechanism, it explains creation of object in the manner which is suitable to a given situation.
 Singleton use when we ensure that only one object of particular class should be instantiated. That single instance will be responsible to coordinate actions across the applications.
 client1,client2,client3 -> all want to work with SINGLETON INSTANCE -> this instance work with tasks in application.
 Singleton controls concurrent access of resources & ensure only one instance of class created by declaring all constructor of class to be private.
@@ -10,7 +10,7 @@ Provide global access by  - declaring all constructor private
  			                    - provide static methods that returns reference to the instance
 			                    - that instance stored as a private static variable
                           
-Accroding to this dummy project we have Program.cs as,
+According to this dummy project we have Program.cs as,
             Singleton s1 = new Singleton();
             s1.DisplayFunc("This is first msg");
             s1.DisplayFunc("This is Second msg");
@@ -47,11 +47,11 @@ Into get property we will create instance only when this static variable is null
 
 and now remove that compile time error which still exists because we still have private constructor and still trying to instantiate singleton class in Program.cs
 
-So, now instead of creating new instance of that class, use get property that we created into that class. So, instaed of creating new instance we can achieve same behavior through returninstance property and by this we can ensure that only one instance of the object created across the operations.
+So, now instead of creating new instance of that class, use get property that we created into that class. So, instead of creating new instance we can achieve same behavior through returninstance property and by this we can ensure that only one instance of the object created across the operations.
 Now if we run it finally , we can see only one time constructor will be called for first instance and we got the Displayfuc working from multiple classe & we have successfully achieve this pattern with this demo project.
 
 
-This will work well if single thread will try to create instance of this class , this verion is not efficient to handle multiple threads as it will run into a raise condition situation.
+This will work well if single thread will try to create instance of this class , this version is not efficient to handle multiple threads as it will run into a raise condition situation.
 For multiple threading situation we should use lock property of thread so that while one thread is busy with instance till then other thread will be in queue and wait for the instance to get free.
 
 Thats All.
