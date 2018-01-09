@@ -30,10 +30,10 @@ so its unnecessary to create new instances of an object for common methods like 
 So we can avoid it by restricting multiple instance creation. And we can achieve it by , making all constructor private and class as sealed so that it won't be inherited anymore.
 Now, we have changed public constructor into private so we are not able to instantiate the class from anywhere. It will give compile time error that class is inaccessible due to its protection level.
 So, we need to provide an alternative where we can perform singleton object creation. This is how we can create a single instance of this singleton class,
-- create a static get property which return Singleton instance
+- create a static get property which return Singleton instance but
 still it will create multiple objects
 - so create one static variable of type Singleton class as null.
-and into get property we will create instance only when this static variable is null, so put if condition into get property as,
+Into get property we will create instance only when this static variable is null, so put if condition into get property as,
 
  private static Singleton instance = null;
         public static Singleton ReturnInstance
